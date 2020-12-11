@@ -1,0 +1,45 @@
+
+
+<input type="text" [(ngModel)]="saludo" >
+
+<div *ngIf="saludo=== 'manaos'" >
+
+  esto se muestra si se cumple la condición 
+
+</div>
+
+<div *ngIf="saludo !== 'manaos'" >
+
+  esto se muestra si no se cumple la condición 
+
+</div>
+
+<input type="number" [(ngModel)]="power" >
+{{power | exponential}}
+
+
+<button (click)="addItem()">Add Item</button>
+<button (click)="deleteItem()">Detele Item</button>
+<ul>
+
+  <li *ngIf="items.length===0">
+    The List is empy
+  </li>
+
+  <li *ngFor="let e of items ; index as i">
+    {{e}} {{i}}
+
+    <button (click)="deleteByIndex(i)" >Delete this item</button>
+  </li>
+</ul>
+
+<div [ngSwitch]="saludo">
+  <p *ngSwitchCase="'manaos'">usted colocó {{saludo}}</p>
+  <p *ngSwitchCase="''">usted no ha colocado nada </p>
+  <p *ngSwitchCase="'el prieto'">usted colocó {{saludo}}</p>
+  <p *ngSwitchCase="'paux'">usted colocó {{saludo}}</p>
+  <p *ngSwitchDefault>no hay match </p>
+</div>
+
+
+

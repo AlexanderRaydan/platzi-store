@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            {{ product.title | uppercase }}
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{product.price | currency}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop-image">
+        <a [routerLink]="['/products', product.id ]" routerLinkActive="active">
+            <img [src]="product.image" alt="">
+        </a>     
+    </div>
+
+    <mat-card-content>
+        <p>{{ product.description | slice:0:5 }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addCard()" > Add to car </button>
+        <a mat-raised-button [routerLink]="['./' , product.id]" routerLinkActive="active">Details</a>
+    </mat-card-actions>
+    <mat-card-footer>
+        <p>{{ today | date:'dd/MM/yyy HH:mm' }}</p>
+    </mat-card-footer>
+</mat-card>
+
+
+
+

@@ -1,0 +1,15 @@
+
+<div *ngIf="product" >
+    <h3>{{ product.title }}</h3>
+
+    {{product.title }}
+    <img [src]="product.image" alt="" style="height: 200px;">
+    <strong>{{product.price }}</strong>
+    <p>{{ product.description}}</p>
+    <!-- <p>{{ productComponent.today | date:'dd/MM/yyy HH:mm' }}</p> -->
+    <!-- <button (click)="productComponent.addCard()" >Add to car</button> -->
+    <button (click)="createProduct()" >create</button>
+    <button (click)="updateProduct()" >edit</button>
+    <button (click)="deleteProduct()" >Delete</button>
+
+</div>
